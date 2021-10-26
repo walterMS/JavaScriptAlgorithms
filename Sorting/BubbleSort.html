@@ -1,0 +1,61 @@
+<!-- Autor : Walter MS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		class BubbleSort{
+			static sort(arr){
+				// document.write("dentro de sort");
+				var bandera=true;
+				for (var i = 0; i <arr.length;i++) {
+					for (var j =0; j <arr.length-1; j++) {
+						if(arr[j]>arr[j+1]){
+							bandera = false;
+							var flap = arr[j];
+							arr[j]=arr[j+1];
+							arr[j+1]=flap;
+						}//if
+					}//for j
+					document.write("<br>");
+					document.write("Fase: " + (i+1));
+					document.write("<br>");
+					for(var m=0;m<arr.length;m++){
+						document.write(arr[m] + "  ");
+						
+					}
+					document.write("<br>");
+					if(bandera){
+						break;
+					}
+					bandera=true;
+				}//for i
+			}//sort
+		}//clase
+
+		var bubble=[90,12,35,80,23,100,70,45,67,60,78,89,50,21,1,40,34,99,30,11,20,13,68,10];
+		document.write("<br>");
+		document.write("<br>");
+		for(i=0;i<bubble.length;i++){
+				document.write(bubble[i] + "  ");
+			}
+		document.write("<br>");
+		document.write("<br>");
+		BubbleSort.sort(bubble);
+		document.write("<br>");
+		document.write("Ya ordeno");
+		document.write("<br>");
+		document.write("<br>");
+		for(i=0;i<bubble.length;i++){
+				document.write(bubble[i] + "  ");
+			}
+	</script>
+	
+</body>
+</html>
