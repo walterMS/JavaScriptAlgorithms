@@ -1,0 +1,53 @@
+//Autor Walter MS
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function factorial(n){
+			if( n <=1){
+				return 1;
+			}else{
+				return n*factorial(n-1);
+
+			}//else
+
+		}//funcion
+
+		for(var i=0; i<=20;i++){
+			document.write("Factorial de " + i + " ");
+			document.write(factorial(i));
+			document.write("<br>");
+		}
+
+		class factorial2{
+			static factorial(n){
+				if( n <=1){
+					return 1;
+				}else{
+					return n*factorial(n-1);
+
+			}//else
+
+			}
+		}//clase
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+		for(var i=0; i<=20;i++){
+			document.write("Factorial de " + i + " ");
+			document.write(factorial2.factorial(i));
+			document.write("<br>");
+		}
+
+	</script>
+	
+</body>
+</html>
