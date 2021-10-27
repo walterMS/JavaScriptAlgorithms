@@ -1,0 +1,46 @@
+<!-- autor Walter MS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var i=1;
+		function hanoi(org,dest,aux,disks){
+			if(disks==1){
+				document.write(i++ + " Mover de  " + org + " a  " + dest);
+				document.write("<br>");
+				return;
+			}
+			//Move from org to aux n-1 disks
+			hanoi(org,aux,dest,disks-1);
+			document.write(i++ + " Mover de  " + org + " a  " + dest);
+			document.write("<br>");
+			//Return from aux to dest n-1 disks
+			hanoi(aux,dest,org,disks-1);
+
+		}
+
+		for(var j=1;j<=15;j++){
+			hanoi('A','C','B',j);
+			i=1;
+			document.write("<br>");
+			document.write("<br>");
+		}
+		// hanoi('A','C','B',3);
+		// i=1;
+		// document.write("<br>");
+		// document.write("<br>");
+		// hanoi('A','C','B',5);
+		// i=1;
+		// document.write("<br>");
+		// document.write("<br>");
+		// hanoi('A','C','B',7);
+
+	</script>
+	
+</body>
+</html>
