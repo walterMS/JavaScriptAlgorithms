@@ -1,0 +1,40 @@
+<!-- autor walter MS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var size =3;//string length
+		var string = new Array(size);
+		// var long=string.length;
+		var num=1;
+		var k=20;//valores 0,1,2,3,4,...,k-1
+
+
+		function kString(string,long,k) {
+			// document.write("Dentro de la funcion<br>");
+			if(long<=0){
+				document.write("<br>");
+				document.write("Cadena: "+ num++ + ":  "+ string);
+				return;
+			}
+			
+			for (var i = 0; i <k; i++) {
+					string[long-1]=i;
+					kString(string,long-1,k);
+				}
+			}
+
+		kString(string,string.length,k);
+
+
+		document.write("<br>" + string.length );
+
+	</script>
+	
+</body>
+</html>
