@@ -1,0 +1,36 @@
+<!-- autor walter MS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var size=10;
+		var string = new Array(size);
+		var long=string.length;
+		var num=1;
+
+		function binaryStringRest(string,long) {
+			if(long<=0){
+				document.write("<br>");
+				document.write("Cadena: "+ num++ + ":  "+ string);
+				return;
+			}
+			string[long-1]=0;
+			binaryStringRest(string,long-1);
+			if((long-1)!=(size-1) && (long-1)!=(0) && (long-1)!=(size-size/2)){//Restriccion externa
+				string[long-1]=1;
+				binaryStringRest(string,long-1);
+			}
+			
+		}
+
+		
+		binaryStringRest(string,string.length);
+
+	</script>
+	
+</body>
