@@ -1,0 +1,74 @@
+<!-- Autor : Walter MS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		class BubbleSort{
+			static sort(arr){
+				// document.write("dentro de sort");
+				var bandera=true;
+				var flap;
+				for (var i = 0; i <arr.length;i++) {
+					for (var j =0; j <arr.length-1 -i; j++) {
+						if(arr[j]>arr[j+1]){
+							bandera = false;
+							flap = arr[j];
+							arr[j]=arr[j+1];
+							arr[j+1]=flap;
+						}//if
+					}//for j
+					document.write("<br>");
+					document.write("Fase: " + (i+1));
+					document.write("<br>");
+					for(var m=0;m<arr.length;m++){
+						document.write(arr[m] + "  ");
+						
+					}
+					document.write("<br>");
+					if(bandera){
+						break;
+					}
+					bandera=true;
+				}//for i
+			}//sort
+		}//clase
+
+		var size=20;
+		var arrRand=[];
+		var max=501, min=1;
+		for(i=0;i<size;i++){
+			arrRand.push(Math.floor(Math.random() * (max - min)) + min);
+		}
+		document.write("<br><br>");
+		document.write("<br>");
+		document.write(arrRand);
+		document.write("<br>");
+		document.write("<br><br><br><br>");
+		BubbleSort.sort(arrRand);
+		document.write("<br>");
+		document.write("<br>Better Random numbers crypto numbers<br><br>");
+
+		size=100;
+		var array = new Uint32Array(size);
+		window.crypto.getRandomValues(array);
+		document.write(array[0]+"<br>");
+		document.write(array[1]+"<br>");
+		document.write(array[2]+"<br>");
+		for(i=0;i<size;i++){
+			array[i]=array[i]%1001;
+		}
+		document.write(array);
+		document.write("<br><br><br><br>");
+		BubbleSort.sort(array);
+		document.write("<br>");
+	</script>
+	
+</body>
+</html>
